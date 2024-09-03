@@ -10,7 +10,7 @@ const port = process.env.PORT || 3001;
 app.use(bodyParser.json());
 
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://portfolio-alfonsoaguors.vercel.app/',
     methods: ['GET', 'POST'], 
     allowedHeaders: ['Content-Type', 'Authorization'],
 }));
