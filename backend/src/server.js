@@ -9,7 +9,11 @@ const port = process.env.PORT || 3001;
 
 app.use(bodyParser.json());
 
-const allowedOrigins = ['https://portfolio-alfonsoaguors.vercel.app'];
+const allowedOrigins = [
+    'https://portfolio-alfonsoaguors.vercel.app',
+    'https://alfonsoaguor.vercel.app',
+    'http://localhost:5173'
+];
 
 app.use(cors({
     origin: function (origin, callback) {
