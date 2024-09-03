@@ -21,7 +21,7 @@ const Contact = () => {
       e.preventDefault();
   
       try {
-        const response = await fetch('http://localhost:3001/send', {
+        const response = await fetch('https://portfolio-react-coral-eight.vercel.app/send', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
