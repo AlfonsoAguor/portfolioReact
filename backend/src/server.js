@@ -9,8 +9,16 @@ const port = process.env.PORT || 3001;
 
 app.use(bodyParser.json());
 
+const allowedOrigins = ['https://portfolio-alfonsoaguors.vercel.app'];
+
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: function (origin, callback) {
+        if (allowedOrigins.includes(origin) || !origin) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     methods: ['GET', 'POST'], 
     allowedHeaders: ['Content-Type', 'Authorization'],
 }));
